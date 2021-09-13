@@ -3,14 +3,14 @@
 
 
 // put your API key here;
-const apiKey = "";  
+const apiKey = "dZPAg5bN3L5ZhFsmrEqoSaQNXMcdVetu33mD8iAV";  
 
 // Access to individual objects by ID
 const objectBaseURL = "https://api.si.edu/openaccess/api/v1.0/content/";
 
 //fetches content based on id of an object.
 function fetchContentDataById(id) {
-  let url = objectBaseURL + id + "?api_key="+apiKey;
+  let url = objectBaseURL + id + "?api_key="+ apiKey;
   window
   .fetch(url)
   .then(res => res.json())
@@ -22,7 +22,8 @@ function fetchContentDataById(id) {
   })
 }
 
-fetchContentDataById("edanmdm:NMAI_270941");
+var dataPoint=fetchContentDataById("edanmdm:nmaahc_2012.158.16");
+console.log(dataPoint);
 
 // Task 1: Find a different object on https://collections.si.edu/search/ and retrieve the data with the code above
 // Make sure to check the box "Only return results with CC0 media" when searching

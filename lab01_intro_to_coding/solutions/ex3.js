@@ -19,6 +19,7 @@ const addChildToViz = () => {
 };
 
 
+//Math.random()
 // fetches iris data
 // runs through data and creates one rectangle per petal item
 function drawIrisData() {
@@ -33,3 +34,4 @@ function drawIrisData() {
 }
 
 drawIrisData();
+

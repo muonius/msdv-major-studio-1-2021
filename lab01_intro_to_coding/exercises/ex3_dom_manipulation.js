@@ -28,7 +28,7 @@ const addChildToViz = () => {
   viz.appendChild(newChild);
 };
 
-button.addEventListener("click", addChildToViz);
+viz.addEventListener("click", addChildToViz);
 
 // Task
 // Where can you see the results of the console.log below? How is it different from in previous exercises?
@@ -38,7 +38,9 @@ function drawIrisData() {
     .fetch("./iris_json.json")
     .then(data => data.json())
     .then(data => {
-      console.log(data);
+      data.forEach(e => {
+        addChildToViz(e.petallength);
+      });
     });
 }
 
