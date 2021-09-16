@@ -3,14 +3,18 @@
 // Using this data set https://collections.si.edu/search/results.htm?q=Flowers&view=grid&fq=data_source%3A%22Cooper+Hewitt%2C+Smithsonian+Design+Museum%22&fq=online_media_type%3A%22Images%22&media.CC0=true&fq=object_type:%22Embroidery+%28visual+works%29%22
 
 // put your API key here;
-const apiKey = "";  
+const dotenv = require ('dotenv');
+
+dotenv.config();
+
+const apiKey = process.env.API_KEY;  
 
 // search base URL
 const searchBaseURL = "https://api.si.edu/openaccess/api/v1.0/search";
 
 // constructing the initial search query
 // const search =  'mask AND unit_code:"FSG"';
-const search =  `Flowers AND unit_code:"CHNDM" AND object_type:"Embroidery (visual works)" AND online_media_type:"Images"`;
+const search =  `unit_code:"NMAAHC" AND topic:"Domestic slave trade"`;
 
 
 // array that we will write into
@@ -37,11 +41,11 @@ function fetchSearchData(searchTerm) {
       for(let i = 0; i < numberOfQueries; i++) {
         // making sure that our last query calls for the exact number of rows
         if (i == (numberOfQueries - 1)) {
-          searchAllURL = url + `&start=${i * pageSize}&rows=${data.response.rowCount - (i * pageSize)}`;
+          let searchAllURL = url + `&start=${i * pageSize}&rows=${data.response.rowCount - (i * pageSize)}`;
         } else {
-          searchAllURL = url + `&start=${i * pageSize}&rows=${pageSize}`;
+          let searchAllURL = url + `&start=${i * pageSize}&rows=${pageSize}`;
         }
-        console.log(searchAllURL)
+        console.log(searchAllURL);
         fetchAllData(searchAllURL);
       
       }

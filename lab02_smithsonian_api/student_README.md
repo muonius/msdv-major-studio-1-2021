@@ -18,7 +18,7 @@ Test ID: edanmdm:nmaahc_2012.158.16
 
 **Reflection**: 
 - Case matters in Test ID
-- Could not find description
+- content.freetext.notes[0]
 
  ---
 ## API Example 2: Fetch terms

@@ -3,7 +3,12 @@
 
 
 // put your API key here;
-const apiKey = "dZPAg5bN3L5ZhFsmrEqoSaQNXMcdVetu33mD8iAV";  
+const dotenv = require ('dotenv');
+
+dotenv.config();
+
+const apiKey = process.env.API_KEY;  
+
 
 // Access to individual objects by ID
 const objectBaseURL = "https://api.si.edu/openaccess/api/v1.0/content/";
